@@ -1,0 +1,398 @@
+:root {
+    --color-primario: #0d6efd;
+    --color-primario-hover: #0b5ed7;
+    --texto-principal: #333;
+    --texto-secundario: #6c757d;
+    --fondo-principal: #f8f9fa;
+    --fondo-panel: #ffffff;
+    --color-borde: #dee2e6;
+    --sombra-chica: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --sombra-mediana: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --radio-borde: 8px;
+    --familia-fuente: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--familia-fuente);
+    background-color: var(--fondo-principal);
+    color: var(--texto-principal);
+    line-height: 1.5;
+}
+
+/* Cabecera */
+.cabecera-app {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--fondo-panel);
+    border-bottom: 1px solid var(--color-borde);
+    box-shadow: var(--sombra-chica);
+}
+
+.cabecera-izquierda h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-primario);
+}
+
+/* Contenedor Principal */
+.principal-app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Cabecera del Módulo */
+.cabecera-modulo {
+    margin-bottom: 2rem;
+}
+
+.cabecera-modulo h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.cabecera-modulo p {
+    color: var(--texto-secundario);
+    font-size: 0.95rem;
+}
+
+/* Panel de Control */
+.panel-control {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    background-color: var(--fondo-panel);
+    padding: 1.5rem;
+    border-radius: var(--radio-borde);
+    border: 1px solid var(--color-borde);
+    box-shadow: var(--sombra-chica);
+    margin-bottom: 2rem;
+    align-items: flex-end;
+}
+
+.grupo-control {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 200px;
+}
+
+.grupo-control.grupo-botones {
+    flex: 0 0 auto;
+}
+
+.grupo-control label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--texto-secundario);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.control-seleccion {
+    padding: 0.625rem;
+    border: 1px solid var(--color-borde);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--texto-principal);
+    background-color: #fff;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.control-seleccion:focus {
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+}
+
+.boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: inherit;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+}
+
+/* Reemplazo de estilo inline: margen derecho en iconos de botones */
+.boton svg {
+    margin-right: 8px;
+}
+
+.boton-primario {
+    background-color: var(--color-primario);
+    color: white;
+    box-shadow: var(--sombra-chica);
+}
+
+.boton-primario:hover {
+    background-color: var(--color-primario-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--sombra-mediana);
+}
+
+.boton-primario:active {
+    transform: translateY(0);
+}
+
+.boton-secundario {
+    background-color: white;
+    color: var(--texto-principal);
+    border: 1px solid var(--color-borde);
+}
+
+.boton-secundario:hover {
+    background-color: #f1f3f5;
+}
+
+.botones-accion {
+    display: flex;
+    gap: 8px;
+}
+
+/* Área del Visualizador */
+.area-visualizador {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .area-visualizador {
+        grid-template-columns: 1fr;
+    }
+}
+
+.panel-visualizador {
+    background-color: var(--fondo-panel);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    padding: 1.5rem;
+    box-shadow: var(--sombra-mediana);
+    display: flex;
+    flex-direction: column;
+}
+
+.cabecera-visualizador {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.cabecera-visualizador h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.etiqueta {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.etiqueta-entrada {
+    background-color: #e9ecef;
+    color: var(--texto-secundario);
+}
+
+.etiqueta-salida {
+    background-color: #dbeafe;
+    color: var(--color-primario);
+}
+
+.contenedor-lienzo {
+    flex: 1;
+    min-height: 350px;
+    border: 2px dashed var(--color-borde);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fcfcfc;
+    overflow: hidden;
+    position: relative;
+    padding: 1rem;
+}
+
+.marcador-posicion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--texto-secundario);
+}
+
+.marcador-posicion svg {
+    margin-bottom: 1rem;
+}
+
+.marcador-posicion p {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.marcador-posicion small {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Esencial para el efecto de matriz: renderizado pixelado */
+canvas {
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 2px;
+    box-shadow: var(--sombra-chica);
+}
+
+canvas.pixelado {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}
+
+/* Ocultar elementos por defecto (Reemplazo de estilos inline) */
+#entradaImagen {
+    display: none;
+}
+
+#lienzoOriginal {
+    display: none;
+}
+
+#lienzoDigitalizado {
+    display: none;
+}
+
+#panelResultados {
+    display: none;
+}
+
+/* Panel de Resultados */
+.panel-resultados {
+    background-color: var(--fondo-panel);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    padding: 1.5rem;
+    box-shadow: var(--sombra-mediana);
+    margin-top: 2rem;
+}
+
+.panel-resultados h3 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-primario);
+    border-bottom: 2px solid var(--fondo-principal);
+    padding-bottom: 0.5rem;
+}
+
+.rejilla-resultados {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 992px) {
+    .rejilla-resultados {
+        grid-template-columns: 1fr;
+    }
+}
+
+.tarjeta-resultado {
+    background-color: var(--fondo-principal);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio-borde);
+    padding: 1rem;
+}
+
+.tarjeta-resultado h4 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: var(--texto-principal);
+}
+
+.tarjeta-resultado p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: var(--texto-secundario);
+}
+
+.tarjeta-resultado p span,
+.tarjeta-resultado p strong {
+    color: var(--texto-principal);
+    font-weight: 500;
+}
+
+.tarjeta-compresion {
+    border-color: #b9d6fe;
+    background-color: #f0f7ff;
+}
+
+.controles-compresion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.subgrupo-control {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.subgrupo-control label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--texto-secundario);
+}
+
+.control-rango {
+    width: 100%;
+    cursor: pointer;
+}
+
+.estadisticas-compresion {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #d0e3ff;
+}
+
+.estadisticas-compresion p {
+    margin-bottom: 0.25rem;
+}
+
+.resaltado-porcentaje {
+    color: #198754 !important;
+    font-size: 1.1rem;
+}
+
+.boton-bloque {
+    width: 100%;
+}
